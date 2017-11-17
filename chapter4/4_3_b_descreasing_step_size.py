@@ -7,25 +7,25 @@ import matplotlib.pyplot as plt
 import numpy as np
 def plot_2d(x,y,N,plot_id):
     #array_=np.asarray(list_)
-    plt.scatter(x,y,alpha = 0.03)
+    plt.plot(x,y,alpha = 0.5)
     plt.title(r'$\theta_n$'+" V.S. " +r'$n$'+' when N = '+str(N)+", with "+r'$\epsilon_n = 1/n $')
     plt.xlabel(r'$n$')
     plt.ylabel(r'$\theta _n$')
     plt.ylim( 0.3, 1.0 )
     plt.savefig("./output"+str(plot_id)+".png",dpi = (200))
-    
+    plt.show()
     plt.close()
 #plt.show()
 
 def plot_2d_heart_rate(x,y,N,plot_id):
     #array_=np.asarray(list_)
-    plt.scatter(x,y,alpha = 0.03)
+    plt.plot(x,y,alpha = 0.5)
     plt.title('Expected Heart Rate'+" V.S. " +r'$n$'+' when N = '+str(N)+", with "+r'$\epsilon_n = 1/n $')
     plt.xlabel(r'$n$')
     plt.ylabel('Expected Heart Rate')
     plt.ylim( 60, 200 )
     plt.savefig("./expected_heart_rate"+str(plot_id)+".png",dpi = (200))
-    
+    plt.show()
     plt.close()
 
 def get_the_random_numbers_used_in_the_simulation(numbers):
@@ -82,7 +82,7 @@ if __name__=="__main__":
     heart_beat_n[0] = 0
     learning_rate = np.ones((TOTAL_NUMBER,))
     for m in range(learning_rate.shape[0]):
-        learning_rate[m] =float(1.0/(m+1))
+        learning_rate[m] =float(1./(m+1))
     N = [1,10,20]
     target_heart_beat = 120
     plot_id = 100
