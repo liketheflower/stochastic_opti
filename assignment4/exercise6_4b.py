@@ -90,18 +90,19 @@ def sto_apro(method,iteration = 1000,theta_initial=5.0,learning_rate=0.0001 , pl
             estimated_gradient = get_gradient_mvd(h_x_theta,h_x_y_theta, theta[i])
              
         theta[i+1] = theta[i]- learning_rate*(1-estimated_gradient)
-    plt.scatter(list(range(iteration)), theta, s=2)
-    plt.title(r'$\theta_n$'+' V.S. iteration, with '+r'$\epsilon = 0.2 $')
+    plt.scatter(list(range(iteration)), theta, s=0.5)
+    plt.title(method.upper()+" "+r'$\theta_n$'+' V.S. iteration, with '+r'$\epsilon =  $'+str(learning_rate))
     plt.xlabel('iteration')
     plt.ylabel(r'$\theta$')
-    plt.show()
+    plt.savefig(method.upper()+'_sa.eps', format='eps', dpi=1000)
+   # plt.show()
     plt.close()
     return theta
 
 if __name__ == '__main__':
-   iteration = 10000
+   iteration = 5000
    theta_init =5.0
-   learning_rate = 0.05
+   learning_rate = 0.06
    theta_approx = sto_apro('ipa',iteration, theta_init, learning_rate)
    theta_approx = sto_apro('sf' ,iteration, theta_init, learning_rate)
    theta_approx = sto_apro('mvd',iteration, theta_init, learning_rate)

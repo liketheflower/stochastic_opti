@@ -26,11 +26,12 @@ def mean_confidence_interval(a, confidence=0.68):
 def get_x_theta(theta, u):
     return -50*theta*math.log(1-u)
  
-def plot_result(a,title, file_name='nothing'):
+def plot_result(method,a,title, file_name='nothing'):
      count, bins, ignored = plt.hist(a, 100, normed=True, lw=3, fc=(0,0,1,0.5))
         #plt.plot(bins, 1/(sigma * np.sqrt(2 * np.pi)) *np.exp( - (bins - mu)**2 / (2 * sigma**2) ),
  #linewidth=2, color='r')
      plt.title(title)
+     plt.savefig(method.upper()+'hist.eps', format='eps', dpi=1000)
      plt.show()
      plt.close()
 
@@ -53,7 +54,7 @@ def get_gradient_mvd( h_x_theta,h_x_y_theta, theta):
     return (1/float(theta))*(h_x_y_theta-h_x_theta)
 
 
-def estimate_gradients(method,u,u_y,theta,plot=False):
+def estimate_gradients(method,u,u_y,theta,plot=True):
     estimated_gradient = np.zeros(u.shape,dtype=np.float)
     for i in range(u.shape[0]):
         x_theta = get_x_theta(theta, u[i])
@@ -77,7 +78,7 @@ def estimate_gradients(method,u,u_y,theta,plot=False):
             estimated_gradient[i] = get_gradient_mvd(h_x_theta,h_x_y_theta, theta)
 
     if plot and theta == 10:
-        plot_result(estimated_gradient,'Hist of the estimated gradient based on IPA('+r'$\theta=$'+str(theta) +', 10000 experiments)')
+        plot_result(method, estimated_gradient,'Hist of the estimated gradient based'+method.upper()+'('+r'$\theta=$'+str(theta) +', 10000 experiments)')
 
     return estimated_gradient
 
@@ -87,9 +88,8 @@ def estimate_and_print(method,u,u_y,theta):
     estimated_gradient =  estimate_gradients(method,u,u_y,theta)
     mean,std, (confident_interval_left, confident_interval_right) =mean_confidence_interval(estimated_gradient)
       #print theta, np.mean(estimated_gradient), np.std(estimated_gradient)
-    print method, estimated_gradient.shape
-    print r'$\theta$', theta,'average', mean,'std',std,'cnfidence interval(95%):[', confident_interval_left,',', confident_interval_right,']'
-    print "--- %s seconds ---" % (time.time() - start_time) ,method,"theta=", theta
+   # print method, estimated_gradient.shape
+    print method.upper(), theta, mean,std, confident_interval_left, confident_interval_right,time.time() - start_time
 if __name__ == '__main__':
 # available random number files:random_10000.npy  random_1000.npy  random_100.npy  random_2000.npy  random_5000.npy 
    iteration = 10000
@@ -99,6 +99,9 @@ if __name__ == '__main__':
   # learning_rate = 0.2
 #   test = np.random.normal(0,1,100000)
  #  e,(f,g)= mean_confidence_interval(test)
+   print r'$\theta$','average','std','cnfidence interval(95%)','time'
+  # print "--- %s seconds ---" % (time.time() - start_time) ,method,"theta=", theta
+
    for theta in thetas:
       estimate_and_print('ipa',u,u_y, theta)
       estimate_and_print('sf',u,u_y, theta)

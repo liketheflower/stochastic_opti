@@ -87,9 +87,8 @@ def estimate_and_print(method,u,u_y,theta):
     estimated_gradient =  estimate_gradients(method,u,u_y,theta)
     mean,std, (confident_interval_left, confident_interval_right) =mean_confidence_interval(estimated_gradient)
       #print theta, np.mean(estimated_gradient), np.std(estimated_gradient)
-    print method, estimated_gradient.shape
-    print r'$\theta$', theta,'average', mean,'std',std,'cnfidence interval(95%):[', confident_interval_left,',', confident_interval_right,']'
-    print "--- %s seconds ---" % (time.time() - start_time) ,method,"theta=", theta
+   # print method, estimated_gradient.shape
+    print method.upper(), theta, mean,std, confident_interval_left, confident_interval_right,time.time() - start_time
 if __name__ == '__main__':
 # available random number files:random_10000.npy  random_1000.npy  random_100.npy  random_2000.npy  random_5000.npy 
    iteration = 10000
@@ -99,6 +98,9 @@ if __name__ == '__main__':
   # learning_rate = 0.2
 #   test = np.random.normal(0,1,100000)
  #  e,(f,g)= mean_confidence_interval(test)
+   print r'$\theta$','average','std','cnfidence interval(95%)','time'
+  # print "--- %s seconds ---" % (time.time() - start_time) ,method,"theta=", theta
+
    for theta in thetas:
       estimate_and_print('ipa',u,u_y, theta)
       estimate_and_print('sf',u,u_y, theta)
