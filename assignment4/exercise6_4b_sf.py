@@ -17,7 +17,7 @@ def get_gradient_ipa(x_theta , d_h_x_theta, theta):
     return (x_theta/theta)*d_h_x_theta
  
 def get_gradient_sf(x_theta , h_x_theta, theta):
-    return h_x_theta*(x_theta/theta-1)
+    return (1/theta**2)*((x_theta/theta)-1)
 
 def get_gradient_mvd( h_x_theta,h_x_y_theta, theta):
     return (1/theta)*(h_x_y_theta-h_x_theta)
@@ -47,7 +47,7 @@ def sto_apro(method,iteration = 1000,theta_initial=5.0,learning_rate=0.0001 , pl
         if method == 'sf':
             estimated_gradient = get_gradient_sf(x_theta,h_x_theta,theta[i])
         if method == 'mvd':
-            estimated_gradient = get_gradient_sf(h_x_theta,h_x_y_theta, theta[i])
+            estimated_gradient = get_gradient_mvd(h_x_theta,h_x_y_theta, theta[i])
              
         theta[i+1] = theta[i]- learning_rate*(1-estimated_gradient)
     plt.scatter(list(range(iteration)), theta, s=2)

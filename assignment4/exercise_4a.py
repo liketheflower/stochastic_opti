@@ -34,25 +34,25 @@ def plot_result(a,title, file_name='nothing'):
      plt.close()
 
 def get_h_x(x):
-    return x/(x+1)**0.5
+    return float(x)/(float(x)+1)**0.5
 
 def get_gradient_ipa(x_theta , d_h_x_theta, theta):
-    print "x_theta , d_h_x_theta, theta,(x_theta/theta)*d_h_x_theta"
-    print x_theta , d_h_x_theta, theta,(x_theta/theta)*d_h_x_theta
-    return (x_theta/theta)*d_h_x_theta
+  #  print "x_theta , d_h_x_theta, theta,(x_theta/theta)*d_h_x_theta"
+   # print x_theta , d_h_x_theta, theta,(x_theta/theta)*d_h_x_theta
+    return (x_theta/float(theta))*d_h_x_theta
  
 def get_gradient_sf(x_theta , h_x_theta, theta):
-    print "x_theta , h_x_theta, theta, h_x_theta*(x_theta/theta-1)"
-    print x_theta , h_x_theta, theta, h_x_theta*(x_theta/theta-1)
-    return h_x_theta*(x_theta/theta-1)
+    #print "x_theta , h_x_theta, theta, h_x_theta*(x_theta/theta-1)"
+    #print x_theta , h_x_theta, theta, h_x_theta*(x_theta/theta-1)
+    return (1/float(theta))*h_x_theta*(x_theta/float(theta)-1)*theta
 
 def get_gradient_mvd( h_x_theta,h_x_y_theta, theta):
-    print "h_x_theta,h_x_y_theta, theta,(1/theta)*(h_x_y_theta-h_x_theta)"
-    print h_x_theta,h_x_y_theta, theta,(1/theta)*(h_x_y_theta-h_x_theta)
-    return (1/theta)*(h_x_y_theta-h_x_theta)
+#    print "h_x_theta,h_x_y_theta, theta,(1/theta)*(h_x_y_theta-h_x_theta)"
+ #   print h_x_theta,h_x_y_theta, theta,(1/float(theta))*(h_x_y_theta-h_x_theta)
+    return (1/float(theta))*(h_x_y_theta-h_x_theta)
 
 
-def estimate_gradients(method,u,u_y,theta,plot=True):
+def estimate_gradients(method,u,u_y,theta,plot=False):
     estimated_gradient = np.zeros(u.shape,dtype=np.float)
     for i in range(u.shape[0]):
         x_theta = get_x_theta(theta, u[i])
@@ -73,7 +73,7 @@ def estimate_gradients(method,u,u_y,theta,plot=True):
         if method == 'sf':
             estimated_gradient[i] = get_gradient_sf(x_theta,h_x_theta,theta)
         if method == 'mvd':
-            estimated_gradient[i] = get_gradient_sf(h_x_theta,h_x_y_theta, theta)
+            estimated_gradient[i] = get_gradient_mvd(h_x_theta,h_x_y_theta, theta)
 
     if plot and theta == 10:
         plot_result(estimated_gradient,'Hist of the estimated gradient based on IPA('+r'$\theta=$'+str(theta) +', 10000 experiments)')
@@ -81,69 +81,19 @@ def estimate_gradients(method,u,u_y,theta,plot=True):
     return estimated_gradient
 
 
-
-
-
-
-
-
-
-
-
-
-def sto_apro(method,iteration = 1000,theta_initial=5.0,learning_rate=0.0001 , plot=False):
-    # generate uniform random numbers
-    # u = np.random.rand(iteration)
-    # available random number files:random_10000.npy  random_1000.npy  random_100.npy  random_2000.npy  random_5000.npy
-    u = np.load('./random_number/random_'+str(iteration)+'.npy')
-    # used for mvd
-
-    u_y = np.load('./random_number/y_random_'+str(iteration)+'.npy')
-    theta = np.zeros((iteration,),dtype=np.float)
-    # follow the Figure 6.2, the initial theta value is set to 5.0
-    theta[0]= theta_initial
-    for i in range(iteration-1):
-        x_theta= get_x_theta(theta[i],u[i])
-        y_theta= get_x_theta(theta[i],u_y[i])
-        d_h_x_theta =1/(1+x_theta)**0.5-x_theta/(2*(1+x_theta)**1.5)
-        h_x_theta = get_h_x(x_theta)
-        h_x_y_theta = get_h_x(x_theta+y_theta)
-        #ipa
-        # theta[i+1] = theta[i]- learning_rate*(1-(x_theta/theta[i])*d_h_x_theta)
-        # ipa
-        if method == 'ipa':
-            estimated_gradient = get_gradient_ipa(x_theta,d_h_x_theta,theta[i])
-        # sf
-        if method == 'sf':
-            estimated_gradient = get_gradient_sf(x_theta,h_x_theta,theta[i])
-        if method == 'mvd':
-            estimated_gradient = get_gradient_sf(h_x_theta,h_x_y_theta, theta[i])
-             
-        theta[i+1] = theta[i]- learning_rate*(1-estimated_gradient)
-    plt.scatter(list(range(iteration)), theta, s=2)
-    plt.title(r'$\theta_n$'+' V.S. iteration, with '+r'$\epsilon = 0.2 $')
-    plt.xlabel('iteration')
-    plt.ylabel(r'$\theta$')
-    plt.show()
-    plt.close()
-    return theta
-
-
-
-
 def estimate_and_print(method,u,u_y,theta):
     estimated_gradient =  estimate_gradients(method,u,u_y,theta)
     mean,std, (confident_interval_left, confident_interval_right) =mean_confidence_interval(estimated_gradient)
       #print theta, np.mean(estimated_gradient), np.std(estimated_gradient)
-    print method
+    print method, estimated_gradient.shape
     print r'$\theta$', theta,'average', mean,'std',std,'cnfidence interval(95%):[', confident_interval_left,',', confident_interval_right,']'
 
 if __name__ == '__main__':
 # available random number files:random_10000.npy  random_1000.npy  random_100.npy  random_2000.npy  random_5000.npy 
-   iteration = 2
+   iteration = 10000
    u = np.load('./random_number/random_'+str(iteration)+'.npy')
    u_y = np.load('./random_number/y_random_'+str(iteration)+'.npy')
-   thetas =[10]
+   thetas =[1,10,20,100,500]
   # learning_rate = 0.2
 #   test = np.random.normal(0,1,100000)
  #  e,(f,g)= mean_confidence_interval(test)
