@@ -37,18 +37,18 @@ def get_h_x(x):
     return float(x)/(float(x)+1)**0.5
 
 def get_gradient_ipa(x_theta , d_h_x_theta, theta):
-  #  print "x_theta , d_h_x_theta, theta,(x_theta/theta)*d_h_x_theta"
-   # print x_theta , d_h_x_theta, theta,(x_theta/theta)*d_h_x_theta
+#    print "x_theta , d_h_x_theta, theta,(x_theta/theta)*d_h_x_theta"
+ #   print x_theta , d_h_x_theta, theta,(x_theta/float(theta))*d_h_x_theta
     return (x_theta/float(theta))*d_h_x_theta
  
 def get_gradient_sf(x_theta , h_x_theta, theta):
-    #print "x_theta , h_x_theta, theta, h_x_theta*(x_theta/theta-1)"
-    #print x_theta , h_x_theta, theta, h_x_theta*(x_theta/theta-1)
-    return (1/float(theta))*h_x_theta*(x_theta/float(theta)-1)*theta
+  #  print "x_theta , h_x_theta, theta, h_x_theta*(x_theta/theta-1),(1/float(theta))*h_x_theta*(x_theta/float(theta)-1)"
+   # print x_theta , h_x_theta, theta,h_x_theta*(x_theta/float(theta)-1)*theta, (1/float(theta))*h_x_theta*(x_theta/float(theta)-1)
+    return (1/float(theta))*h_x_theta*((x_theta/float(50*theta))-1)
 
 def get_gradient_mvd( h_x_theta,h_x_y_theta, theta):
-#    print "h_x_theta,h_x_y_theta, theta,(1/theta)*(h_x_y_theta-h_x_theta)"
- #   print h_x_theta,h_x_y_theta, theta,(1/float(theta))*(h_x_y_theta-h_x_theta)
+   # print "h_x_theta,h_x_y_theta, theta,(1/theta)*(h_x_y_theta-h_x_theta)"
+   # print h_x_theta,h_x_y_theta, theta,(1/float(theta))*(h_x_y_theta-h_x_theta)
     return (1/float(theta))*(h_x_y_theta-h_x_theta)
 
 
@@ -93,7 +93,7 @@ if __name__ == '__main__':
    iteration = 10000
    u = np.load('./random_number/random_'+str(iteration)+'.npy')
    u_y = np.load('./random_number/y_random_'+str(iteration)+'.npy')
-   thetas =[1,10,20,100,500]
+   thetas =[6,8,10,12]
   # learning_rate = 0.2
 #   test = np.random.normal(0,1,100000)
  #  e,(f,g)= mean_confidence_interval(test)

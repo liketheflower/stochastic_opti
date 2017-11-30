@@ -9,6 +9,6 @@ def random_generation(iteration):
     print a[0],b[0]
     np.save('./random_number/y_random_'+str(iteration)+'.npy',b)
 
-iterations = [2,100,1000,2000,5000,10000]
+iterations = [2,10,10,10,10,10,10,10,10,10,10,100,1000,2000,5000,10000]
 for iteration in iterations:
     random_generation(iteration)
