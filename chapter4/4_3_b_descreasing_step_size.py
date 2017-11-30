@@ -72,17 +72,19 @@ def do_simulation(theta_n,heart_beat_n,learning_rate,randoms,N,target_heart_beat
 
 if __name__=="__main__":
     #total number of the measure intervals. Each interval is 0.3s then the total simulation time will be 0.3*TOTAL_NUMBER
-    TOTAL_NUMBER = 100000
+    TOTAL_NUMBER = 1000
     randoms = get_the_random_numbers_used_in_the_simulation(TOTAL_NUMBER)
     print (randoms.shape)
     theta_n = np.zeros((TOTAL_NUMBER,),dtype=float)
+ #   theta_n[0] = 0.5
     heart_beat_n = np.zeros((TOTAL_NUMBER,),dtype=int)
     #initialize theta0 as 0.5, initialize the first measure of the heart beat as 0.
     theta_n[0] = 0.5
     heart_beat_n[0] = 0
     learning_rate = np.ones((TOTAL_NUMBER,))
+    learning_rate[0]=0.001
     for m in range(learning_rate.shape[0]):
-        learning_rate[m] =float(1./(m+1))
+        learning_rate[m] =(learning_rate[0]/float(m+1))
     N = [1,10,20]
     target_heart_beat = 120
     plot_id = 100

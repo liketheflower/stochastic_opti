@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 def plot_2d(x,y,N,plot_id):
     #array_=np.asarray(list_)
-    plt.scatter(x,y,alpha = 0.03)
+    plt.plot(x,y,alpha = 0.99)
     plt.title(r'$\theta_n$'+" V.S. " +r'$n$'+' when N = '+str(N)+", with "+r'$\epsilon = 0.0001$')
     plt.xlabel(r'$n$')
     plt.ylabel(r'$\theta _n$')
@@ -19,7 +19,7 @@ def plot_2d(x,y,N,plot_id):
 
 def plot_2d_heart_rate(x,y,N,plot_id):
     #array_=np.asarray(list_)
-    plt.scatter(x,y,alpha = 0.03)
+    plt.plot(x,y,alpha = 0.99)
     plt.title('Expected Heart Rate'+" V.S. " +r'$n$'+' when N = '+str(N)+", with "+r'$\epsilon = 0.0001$')
     plt.xlabel(r'$n$')
     plt.ylabel('Expected Heart Rate')
@@ -73,7 +73,7 @@ def do_simulation(theta_n,heart_beat_n,learning_rate,randoms,N,target_heart_beat
 
 if __name__=="__main__":
     #total number of the measure intervals. Each interval is 0.3s then the total simulation time will be 0.3*TOTAL_NUMBER
-    TOTAL_NUMBER = 100000
+    TOTAL_NUMBER = 1000
     randoms = get_the_random_numbers_used_in_the_simulation(TOTAL_NUMBER)
     print (randoms.shape)
     theta_n = np.zeros((TOTAL_NUMBER,),dtype=float)
