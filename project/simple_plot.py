@@ -11,20 +11,25 @@ class Simple(object):
             print "error: step has to be greater than 0 and less than 1.0"
         self.x = [i*step for i in range(int(lower/step),int(upper/step))]
    
-    def plot_(self, y):
+    def plot_(self, y,title,file_name,x_lab='x', y_lab=r'$J(x)$'):
         y_ = [-_ for _ in y]
         plt.plot(self.x, y_)
+        plt.xlabel(x_lab)
+        plt.ylabel(y_lab)
+        plt.title(title)
+        file_name = './result/'+file_name
+        plt.savefig(file_name, format='eps', dpi=1000)
         plt.show()
- 
+        plt.close() 
     def plot_line(self):
         # a simple line:  y = 2*x +1*(1-x) =2x+1-x =x+1
         y = [x_+1 for x_ in self.x]
-        self.plot_(y)
+        self.plot_(y,r'$J(x)=x+1$','line.eps')
     def plot_line_sphe(self):
         #   y = 2*cos(x)**2 + (1-cos(x)**2)
         #   y = cos(x)**2 + 1
         y = [math.cos(x_)**2+1 for x_ in self.x]
-        self.plot_(y)
+        self.plot_(y,r'$J(\theta) = cos(\theta)^2+1$','line_sphe.eps',r'$\theta$',r'$J(\theta)$')
     
     def plot_cos_x_square(self):
         y = [math.cos(x_)**2 for x_ in self.x]
@@ -62,10 +67,10 @@ class Simple(object):
         c = 0.01
         y = [self.get_log_norm_pdf(x_, mu,sigma)+c*math.exp(x_) for x_ in self.x]
         self.plot_(y)
-a = Simple(0.01,-5,5)
-"""
+a = Simple(0.01,-1,4)
 a.plot_line()
 a.plot_line_sphe()
+"""
 #a.plot_quartic_curve()
 b = Simple(0.001, -6, 6)
 b.plot_quartic_curve()
@@ -74,8 +79,15 @@ b.plot_quartic_curve_sphe()
 c = Simple(0.01, -1.5, 1.5)
 c.plot_poly_order_4()
 """
+
+
+
+
+"""
 d = Simple(0.01, 0.01, 5)
 d.plot_poly_order_4_sphe()
 d.exponential()
 d.log_norm()
 d.log_norm_and_exponential()
+
+"""
