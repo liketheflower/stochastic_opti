@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.27)  25 DEC 2017 02:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.27)  25 DEC 2017 16:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -396,17 +396,12 @@ Package epstopdf Info: Source file: <line.eps>
 (epstopdf)                    date: 2017-12-25 02:16:07
 (epstopdf)                    size: 14889 bytes
 (epstopdf)             Output file: <line-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-12-25 00:57:12
-(epstopdf)                    size: 9569 bytes
+(epstopdf)                    date: 2017-12-25 02:17:05
+(epstopdf)                    size: 9334 bytes
 (epstopdf)             Command: <repstopdf --outfile=line-eps-converted-to.pdf 
 line.eps>
 (epstopdf)             \includegraphics on input line 115.
-runsystem(repstopdf --outfile=line-eps-converted-to.pdf line.eps)...executed sa
-fely (allowed).
-
-Package epstopdf Info: Result file: <line-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-12-25 02:17:05
-(epstopdf)                    size: 9334 bytes.
+Package epstopdf Info: Output file is already uptodate.
 <line-eps-converted-to.pdf, id=17, 462.72874pt x 346.29375pt>
 File: line-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -418,17 +413,12 @@ Package epstopdf Info: Source file: <line_sphe.eps>
 (epstopdf)                    date: 2017-12-25 02:16:22
 (epstopdf)                    size: 22866 bytes
 (epstopdf)             Output file: <line_sphe-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-12-25 00:57:13
-(epstopdf)                    size: 14140 bytes
+(epstopdf)                    date: 2017-12-25 02:17:06
+(epstopdf)                    size: 13902 bytes
 (epstopdf)             Command: <repstopdf --outfile=line_sphe-eps-converted-to
 .pdf line_sphe.eps>
 (epstopdf)             \includegraphics on input line 127.
-runsystem(repstopdf --outfile=line_sphe-eps-converted-to.pdf line_sphe.eps)...e
-xecuted safely (allowed).
-
-Package epstopdf Info: Result file: <line_sphe-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-12-25 02:17:06
-(epstopdf)                    size: 13902 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <line_sphe-eps-converted-to.pdf, id=23, 462.72874pt x 346.29375pt>
 File: line_sphe-eps-converted-to.pdf Graphic file (type pdf)

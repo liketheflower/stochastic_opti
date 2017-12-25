@@ -22,33 +22,22 @@ class Simple(object):
         plt.show()
         plt.close() 
 
-def get_j_a_n(x_n,a):
-    if x_n <=1 and x_n>=0:
-        return -1
-    elif x_n<0:
-        return -1+a*x_n
-    else:
-        return -1+a*x_n
+def get_d_j(x_n):
+    return 2*math.cos(x_n)*math.sin(x_n)
 
 
 def simulation(iteration, learning_rate, alpha_n):
     res=[]
-    smooth =10
+    estimated_theta=[]
    # estimate_x=[]
- 
-    x_init=20 
-    for i, a in enumerate(alpha_n):
+    for i, a in enumerate(random_):
         print 'i,a',i,a
-        tem = []
+        tem = [a*math.pi/2.0]
         for i in range(iteration):
-            if i==0:
-                tem.append(x_init)
-            tem.append(tem[i-1]-learning_rate*get_j_a_n(tem[i-1],a))
+            tem.append(tem[i-1]-learning_rate*get_d_j(tem[i-1]))
         res+=tem
-        average_ = sum(tem[-smooth:])/float(smooth)
-        if 1000*average_>=0 and 1000*average_<=1000: 
-            return res , average_
-    return res, average_
+        estimated_theta.append(tem[-1])
+    return res, estimated_theta
 
 def plot_new(x, y,title,file_name,x_lab='x', y_lab=r'$J(x)$'):
        # y_ = [-_ for _ in y]
@@ -69,11 +58,18 @@ if __name__=='__main__':
     start_time = time.time()
     iteration = 500
     learning_rate = 0.01
-    penalty_max_n = 100 
-    alpha_n = [math.exp(i) for i in range(penalty_max_n)]
-    res,estimated_x = simulation(iteration, learning_rate, alpha_n)
-    print 'res', res[-1],estimated_x
+    repeat = 5
+    random_a = np.load('random100.npy') 
+    random_ = random_a[:repeat]
+    res,estimated_theta = simulation(iteration, learning_rate, random_)
+    import collections
+    optimal_theta = collections.defaultdict(float)
+    for theta_ in estimated_theta:
+        optimal_theta[theta_] = -math.cos(theta_)**2-1
+    optimal_theta_ = sorted(optimal_theta, key=optimal_theta.get)
+    print 'res', math.cos(optimal_theta_[0])**2
     print("--- %s seconds ---" % (time.time() - start_time))
-    plot_new(list(range(len(res))),res,"Resuls of penalty method",'line_est.eps',r'$n$',r'$X_n$')
+   # print 'res',min[math.cos(_) for _ in estimated_theta]
+    plot_new(list(range(len(res))),res,"Resuls of the spherical coordinates parameterization",'line_est_sphe.eps',r'$n$',r'$\theta_n$')
     #plt.show()
 
