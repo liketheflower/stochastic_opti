@@ -24,12 +24,12 @@ class Simple(object):
     def plot_line(self):
         # a simple line:  y = 2*x +1*(1-x) =2x+1-x =x+1
         y = [x_+1 for x_ in self.x]
-        self.plot_(y,r'$J(x)=x+1$','line.eps')
+        self.plot_(y,r'$J(x)=-x-1$','line.eps')
     def plot_line_sphe(self):
         #   y = 2*cos(x)**2 + (1-cos(x)**2)
         #   y = cos(x)**2 + 1
         y = [math.cos(x_)**2+1 for x_ in self.x]
-        self.plot_(y,r'$J(\theta) = cos(\theta)^2+1$','line_sphe.eps',r'$\theta$',r'$J(\theta)$')
+        self.plot_(y,r'$J(\theta) = -cos(\theta)^2-1$','line_sphe.eps',r'$\theta$',r'$J(\theta)$')
     
     def plot_cos_x_square(self):
         y = [math.cos(x_)**2 for x_ in self.x]
@@ -67,7 +67,7 @@ class Simple(object):
         c = 0.01
         y = [self.get_log_norm_pdf(x_, mu,sigma)+c*math.exp(x_) for x_ in self.x]
         self.plot_(y)
-a = Simple(0.01,-1,4)
+a = Simple(0.01,-math.pi,4*math.pi)
 a.plot_line()
 a.plot_line_sphe()
 """
@@ -84,7 +84,7 @@ c.plot_poly_order_4()
 
 
 """
-d = Simple(0.01, 0.01, 5)
+d = Simple(0.01, 0.01, 4*math.pi)
 d.plot_poly_order_4_sphe()
 d.exponential()
 d.log_norm()
