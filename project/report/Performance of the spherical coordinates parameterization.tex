@@ -56,8 +56,45 @@ Any feasible allocation vector $r = (r_1,...,r_n)$ on the unit ball can be descr
 
 
 
+\begin{equation}\label{eq:sphe}
+    r_i(\theta)=\left\{
+                \begin{array}{ll}
+                  cos(\theta_1), \quad \quad \quad \quad \quad \quad \quad \quad i=1;\\
+                  cos(\theta_i)\prod_{k=1}^{i-1} sin(\theta_k),\quad  \quad  2\leq i \leq n-1;\\
+                  sin(\theta_{n-1})\prod_{k=1}^{n-2} sin(\theta_k),\quad  i=n.
+                \end{array}
+              \right.
+\end{equation}
 
-
+\section{Penalty Methods}
+In order to adress the constrained optimization problem, several methods are provided. In this work, the penalty method is studied to compare the performance of the spherical coordinated parameterization method.\\
+Given the constrained problem as described in equation \ref{eq:pena_1}
+\begin{equation}\label{eq:pena_1}
+\begin{aligned}
+\min_{x\in \mathbb{R}^n}J(x), \\
+\textrm{s.t.} \quad & 0 \leq x_i \leq 1, i=1,...,n\\
+              \quad & \sum_{i=1}^{n} x_i = 1\\
+\end{aligned}
+\end{equation}
+THe penalty methods modify the original performance function to penalize the extent to which the constraints are not satisfied. Recall that $|.|$ denotes the Euclidean norm, then the penalized function is defined:\\
+\begin{equation} \label{eq:pena_2}
+\begin{aligned}
+J_{\alpha}(x) = J(x)+\frac{\alpha}{2}(|g(x)_{+}|^2+|g(x)_{\_}|^2),\\
+where \quad g(x)_{+} =(g_1(x)_{+},...g_j(x)_{+})^T, and \quad g_i(x)_{+} = max(1,g_i(\theta))-1\\
+where \quad g(x)_{\_} =(g_1(x)_{\_},...g_j(x)_{\_})^T, and \quad g_i(x)_{\_} = min(0,g_i(\theta))\\
+\end{aligned}
+\end{equation}
+Then two-time scale algorithm is used to get the optimal value of $x$ by using the formulars shown in equation \ref{eq:pena_a}, equation \ref{eq:pena_b} and equation \ref{eq:pena_c}. \\
+\begin{equation} \label{eq:pena_a}
+x_{n+1}=x_n-\epsilon _n \nabla J{\alpha_ n}(x_n)^T
+\end{equation}
+\begin{equation}\label{eq:pena_b}
+\alpha_{n+1}=\alpha_n+\delta _n \mathbbm{1} _{\{n\in {T_i}\}}
+\end{equation}
+where $\sum \delta_n = + \infty$, and\\
+\begin{equation}\label{eq:pena_c}
+\nabla J{\alpha_ n}(x_n) =\nabla _x J(x_n)+\alpha_n(g(x_n)^T \nabla g(x_n) \mathbbm{1}_{\{|g(x_n)|<0\}}+g(x_n)^T \nabla g(x_n) \mathbbm{1}_{\{|g(x_n)|>1\}})
+\end{equation}
 %\begin{table*}[!ht]
 %\begin{center}
 %\begin{tabular}{|c|c|c|}
@@ -76,7 +113,7 @@ Any feasible allocation vector $r = (r_1,...,r_n)$ on the unit ball can be descr
 
 
 \part{Experiments}
-\section{Cost function is linear}
+\section{Cost function is linear and without noise}
 In this experiment, the cost function is a linear function. The optimization problem is described as below:\\
 
 
@@ -99,6 +136,29 @@ As $\sum_{i=1}^{2} x_i = 1$, we can change equation \ref{eq:1} to:\\
 \end{equation}
 
 
+
+
+
+
+\begin{figure}[H]
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1.0\linewidth]{line.eps}
+
+\end{center}
+   \caption{The plot of the cost function: $J(x) = -x-1$.  }
+\label{fig:line_cost}
+\end{figure}
+
+\begin{equation}\label{eq:line_theta}
+\begin{aligned}
+\min_{\theta\in \mathbb{R}} \quad & J(\theta) = -cos(\theta)^2-1\\
+\end{aligned}
+\end{equation}
+
+The plot of the equation \ref{eq:2} is shown in figure \ref{fig:line_cost}. By using the equation \ref{eq:sphe}, we can change the constrained optimization probblem to an unconstrained problem by using the spherical coordinates parameterization method. The unconstrained problem by using the spherical coordinates parameterization method is formally described in equation \ref{eq:line_theta}. The plot of the equation \ref{eq:line_theta} is shown in figure \ref{fig:line_cost_sphe}.\\  
+
+
 %\begin{equation}
 %\begin{aligned}
 %\min_{w,b,\xi} \quad & \frac{1}{2}w^{t}w+C\sum_{i=1}^{N}{\xi_{i}}\\
@@ -112,26 +172,78 @@ As $\sum_{i=1}^{2} x_i = 1$, we can change equation \ref{eq:1} to:\\
 \begin{figure}[H]
 \begin{center}
 %\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
-\includegraphics[width=1.0\linewidth]{line.eps}
+\includegraphics[width=1.0\linewidth]{line_sphe.eps}
+
 
 \end{center}
-   \caption{The plot of the cost function: $J(x) = -x-1$.  }
+   \caption{The plot of the cost function: $J(\theta) = -cos(\theta)^2-1$. }
 \label{fig:line_cost_sphe}
 \end{figure}
+
 
 
 
 \begin{figure}[H]
 \begin{center}
 %\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
-\includegraphics[width=1.0\linewidth]{line_sphe.eps}
+\includegraphics[width=1.0\linewidth]{line_est.eps}
 
 
 \end{center}
-   \caption{The plot of the cost function: $J(\theta) = -cos(\theta)^2-1$. }
-\label{fig:e1}
+   \caption{The estimation process of the optimal $x$ when the penalty method is used.Here the initial value of $x$ is set to 20. The total iteration for $T_i$ is 500. The $\alpha_1 = 1$ and $\alpha _{n+1} = \alpha _n + \delta_n,$ where $\delta _ n=e^n$. }
+\label{fig:line_result}
 \end{figure}
 
+\begin{figure}[H]
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1.0\linewidth]{line_est_sphe.eps}
+
+
+\end{center}
+   \caption{The estimation process of the optimal $\theta$ when the spherical coordinated parameterization is used. In order to make sure the global optimal value is collected, 5 times experiments with random initialized value of $\theta$ is done and the global minimum vlaue is collected from those 5 experiments.}
+\label{fig:line_result_sphe}
+\end{figure}
+
+
+%jimmy@jimmy-Lenovo-IdeaPad-V450:~/Dropbox/repos/stochastic_opti/project$ python line.py 
+%i,a 0 1.0
+%i,a 1 2.71828182846
+%res 0.987424834706 0.994721377501
+%--- 0.0010871887207 seconds ---
+%jimmy@jimmy-Lenovo-IdeaPad-V450:~/Dropbox/repos/stochastic_opti/project$ python line_sphe.py 
+%i,a 0 0.620390355449
+%i,a 1 0.598575782266
+%i,a 2 0.114661879355
+%i,a 3 0.552088529417
+%i,a 4 0.63994160765
+%res 0.999998638966
+%--- 0.0141630172729 seconds ---
+
+
+
+
+
+\begin{table*}[!ht]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Optimal $x$& method & estimated $x$&execution time(ms)\\
+\hline
+1.0& penalty method&0.9947&1.09\\
+\hline
+1.0&  the spherical coordinates parameterization&1.0000&14.16\\
+%1.036 & 522.653 & 322.425& 17.956&$\mu = 522.653, \sigma =17.956$ &$\lambda =522.653 $\\
+%1.645 & 194.570 & 168.123& 12.966&$\mu = 194.570, \sigma =12.966$ &$\lambda =194.570 $\\
+%2.000 & 91.139 & 86.115& 9.280&$\mu = 91.139, \sigma =9.280$ &$\lambda =91.139 $\\
+%2.800 & 10.440 & 10.228& 3.198&$\mu = 10.440, \sigma =3.198$ &$\lambda =10.440 $\\
+
+\hline
+\end{tabular}
+\end{center}
+\caption{The results of the penalty method and spherical coordinate parameterization.}
+\label{tab:line}
+\end{table*}
 
 
 %\begin{table*}[!ht]
