@@ -42,7 +42,7 @@
 This report provides the results of using the spherical coordinates to resolve the constrained problems.
 \end{abstract}
 %\textbf{Due Mar 1st 11:59 pm. 10 points for each exercise and 20 points for the extra credit exercise }\\
-\part{Introduction}
+\section{Introduction}
 For the resource allocation problem, suppose resource $p_i$ is allocated to $i$ where $i$ is the index of the object which get the resource, $p_i$ is the allocation ratio to the total available resource. Then we can get:\\
 \begin{equation} \label{eq:sum_res_alo}
 \sum_{i=1}^{n} p_i = 1
@@ -66,7 +66,7 @@ Any feasible allocation vector $r = (r_1,...,r_n)$ on the unit ball can be descr
               \right.
 \end{equation}
 
-\section{Penalty Methods}
+\subsection{Penalty Methods}
 In order to adress the constrained optimization problem, several methods are provided. In this work, the penalty method is studied to compare the performance of the spherical coordinated parameterization method.\\
 Given the constrained problem as described in equation \ref{eq:pena_1}
 \begin{equation}\label{eq:pena_1}
@@ -112,8 +112,8 @@ where $\sum \delta_n = + \infty$, and\\
 %\end{table*}
 
 
-\part{Experiments}
-\section{Cost function is linear and without noise}
+\section{Experiments}
+\subsection{Cost function is linear and without noise}
 In this experiment, the cost function is a linear function. The optimization problem is described as below:\\
 
 
@@ -206,22 +206,21 @@ The plot of the equation \ref{eq:2} is shown in figure \ref{fig:line_cost}. By u
 \end{figure}
 
 
-%jimmy@jimmy-Lenovo-IdeaPad-V450:~/Dropbox/repos/stochastic_opti/project$ python line.py 
+
+
+%owners-MacBook-Pro:project jimmy$ python line.py 
 %i,a 0 1.0
 %i,a 1 2.71828182846
 %res 0.987424834706 0.994721377501
-%--- 0.0010871887207 seconds ---
-%jimmy@jimmy-Lenovo-IdeaPad-V450:~/Dropbox/repos/stochastic_opti/project$ python line_sphe.py 
+%--- 0.000710010528564 seconds ---
+%owners-MacBook-Pro:project jimmy$ python line_sphe.py 
 %i,a 0 0.620390355449
 %i,a 1 0.598575782266
 %i,a 2 0.114661879355
 %i,a 3 0.552088529417
 %i,a 4 0.63994160765
 %res 0.999998638966
-%--- 0.0141630172729 seconds ---
-
-
-
+%--- 0.00955319404602 seconds ---
 
 
 \begin{table*}[!ht]
@@ -230,9 +229,9 @@ The plot of the equation \ref{eq:2} is shown in figure \ref{fig:line_cost}. By u
 \hline
 Optimal $x$& method & estimated $x$&execution time(ms)\\
 \hline
-1.0& penalty method&0.9947&1.09\\
+1.0& penalty method&0.995&0.71\\
 \hline
-1.0&  the spherical coordinates parameterization&1.0000&14.16\\
+1.0&  \makecell{ the spherical coordinates \\parameterization}&1.000&9.55\\
 %1.036 & 522.653 & 322.425& 17.956&$\mu = 522.653, \sigma =17.956$ &$\lambda =522.653 $\\
 %1.645 & 194.570 & 168.123& 12.966&$\mu = 194.570, \sigma =12.966$ &$\lambda =194.570 $\\
 %2.000 & 91.139 & 86.115& 9.280&$\mu = 91.139, \sigma =9.280$ &$\lambda =91.139 $\\
