@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  25 DEC 2017 22:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 DEC 2017 00:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -373,6 +373,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--47
  []
 
 
+LaTeX Warning: Reference `eq:sum_res_alo' on page 1 undefined on input line 51.
+
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
@@ -382,12 +386,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--56
 
  []
 
+
+LaTeX Warning: Reference `eq:pena_1' on page 1 undefined on input line 71.
+
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 78--80
 
  []
+
+
+LaTeX Warning: Reference `eq:pena_a' on page 2 undefined on input line 87.
+
+
+LaTeX Warning: Reference `eq:pena_b' on page 2 undefined on input line 87.
+
+
+LaTeX Warning: Reference `eq:pena_c' on page 2 undefined on input line 87.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 86--88
@@ -420,6 +436,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--118
  []
 
 [2]
+
+LaTeX Warning: Reference `eq:1' on page 3 undefined on input line 130.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
@@ -440,6 +460,29 @@ File: line-eps-converted-to.pdf Graphic file (type pdf)
 <use line-eps-converted-to.pdf>
 Package pdftex.def Info: line-eps-converted-to.pdf used on input line 146.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
+
+
+LaTeX Warning: Reference `eq:2' on page 3 undefined on input line 159.
+
+
+LaTeX Warning: Reference `fig:line_cost' on page 3 undefined on input line 159.
+
+
+
+LaTeX Warning: Reference `eq:sphe' on page 3 undefined on input line 159.
+
+
+LaTeX Warning: Reference `eq:line_theta' on page 3 undefined on input line 159.
+
+
+
+LaTeX Warning: Reference `eq:line_theta' on page 3 undefined on input line 159.
+
+
+
+LaTeX Warning: Reference `fig:line_cost_sphe' on page 3 undefined on input line
+ 159.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
@@ -501,38 +544,118 @@ Package pdftex.def Info: line_est_sphe-eps-converted-to.pdf used on input line
 200.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
  [5 <./line_est-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <polynomial.eps>
+(epstopdf)                    date: 2017-12-25 23:10:00
+(epstopdf)                    size: 26715 bytes
+(epstopdf)             Output file: <polynomial-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-12-25 23:15:26
+(epstopdf)                    size: 12850 bytes
+(epstopdf)             Command: <repstopdf --outfile=polynomial-eps-converted-t
+o.pdf polynomial.eps>
+(epstopdf)             \includegraphics on input line 273.
+Package epstopdf Info: Output file is already uptodate.
+
+<polynomial-eps-converted-to.pdf, id=127, 578.16pt x 433.62pt>
+File: polynomial-eps-converted-to.pdf Graphic file (type pdf)
+
+<use polynomial-eps-converted-to.pdf>
+Package pdftex.def Info: polynomial-eps-converted-to.pdf used on input line 273
+.
+(pdftex.def)             Requested size: 390.0pt x 292.4956pt.
+ [6 <./line_est_sphe-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <polynomial_sphe.eps>
+(epstopdf)                    date: 2017-12-25 23:57:38
+(epstopdf)                    size: 33044 bytes
+(epstopdf)             Output file: <polynomial_sphe-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-12-26 00:01:16
+(epstopdf)                    size: 16540 bytes
+(epstopdf)             Command: <repstopdf --outfile=polynomial_sphe-eps-conver
+ted-to.pdf polynomial_sphe.eps>
+(epstopdf)             \includegraphics on input line 288.
+Package epstopdf Info: Output file is already uptodate.
+ <polynomial_sphe-eps-converted-to.pdf, id=168, 578.16pt x 433.62pt>
+File: polynomial_sphe-eps-converted-to.pdf Graphic file (type pdf)
+
+<use polynomial_sphe-eps-converted-to.pdf>
+Package pdftex.def Info: polynomial_sphe-eps-converted-to.pdf used on input lin
+e 288.
+(pdftex.def)             Requested size: 390.0pt x 292.4956pt.
+ [7 <./polynomial-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <polynomial_est.eps>
+(epstopdf)                    date: 2017-12-25 23:54:34
+(epstopdf)                    size: 25103 bytes
+(epstopdf)             Output file: <polynomial_est-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-12-26 00:00:51
+(epstopdf)                    size: 13156 bytes
+(epstopdf)             Command: <repstopdf --outfile=polynomial_est-eps-convert
+ed-to.pdf polynomial_est.eps>
+(epstopdf)             \includegraphics on input line 305.
+Package epstopdf Info: Output file is already uptodate.
+ <polynomial_est-eps-converted-to.pdf, id=203, 578.16pt x 433.62pt>
+File: polynomial_est-eps-converted-to.pdf Graphic file (type pdf)
+
+<use polynomial_est-eps-converted-to.pdf>
+Package pdftex.def Info: polynomial_est-eps-converted-to.pdf used on input line
+ 305.
+(pdftex.def)             Requested size: 390.0pt x 292.4956pt.
+ [8 <./polynomial_sphe-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <polynomial_est_sphe.eps>
+(epstopdf)                    date: 2017-12-25 23:54:46
+(epstopdf)                    size: 41431 bytes
+(epstopdf)             Output file: <polynomial_est_sphe-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-12-26 00:00:51
+(epstopdf)                    size: 20182 bytes
+(epstopdf)             Command: <repstopdf --outfile=polynomial_est_sphe-eps-co
+nverted-to.pdf polynomial_est_sphe.eps>
+(epstopdf)             \includegraphics on input line 318.
+Package epstopdf Info: Output file is already uptodate.
+
+<polynomial_est_sphe-eps-converted-to.pdf, id=241, 578.16pt x 433.62pt>
+File: polynomial_est_sphe-eps-converted-to.pdf Graphic file (type pdf)
+
+<use polynomial_est_sphe-eps-converted-to.pdf>
+Package pdftex.def Info: polynomial_est_sphe-eps-converted-to.pdf used on input
+ line 318.
+(pdftex.def)             Requested size: 390.0pt x 292.4956pt.
+ [9 <./polynomial_est-eps-converted-to.pdf>]
 No file "Performance of the spherical coordinates parameterization".bbl.
-[6 <./line_est_sphe-eps-converted-to.pdf>]
-(./Performance of the spherical coordinates parameterization.aux) ) 
+[10 <./polynomial_est_sphe-eps-converted-to.pdf>]
+(./Performance of the spherical coordinates parameterization.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4538 strings out of 492995
- 64235 string characters out of 6132704
- 134671 words of memory out of 5000000
- 7980 multiletter control sequences out of 15000+600000
- 11292 words of font info for 45 fonts, out of 8000000 for 9000
+ 4560 strings out of 492995
+ 64997 string characters out of 6132704
+ 134541 words of memory out of 5000000
+ 7998 multiletter control sequences out of 15000+600000
+ 11599 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,14n,28p,571b,299s stack positions out of 5000i,500n,10000p,200000b,80000s
- </Users/jim
-my/Library/texlive/2017/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/lo
-cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/loca
-l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/
-texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+ </Users/jimmy/Library/texlive/2017/texmf-var/fonts/pk/ljfour/public/bbm/bbm1
+2.600pk></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pf
+b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
+live/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "Performance of the spherical coordinates parameterization.pd
-f" (6 pages, 203657 bytes).
+f" (10 pages, 255404 bytes).
 PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 365 PDF objects out of 1000 (max. 8388607)
+ 134 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

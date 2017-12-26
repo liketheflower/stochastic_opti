@@ -267,6 +267,88 @@ Optimal $x$& method & estimated $x$&execution time(ms)\\
 
 
 
+\begin{figure}[H]
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1.0\linewidth]{polynomial.eps}
+
+
+\end{center}
+   \caption{The plot of the cost function: $J(x) =-x^4+2x^2-x$. }
+\label{fig:line_cost_sphe}
+\end{figure}
+
+
+
+
+
+\begin{figure}[H]
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1.0\linewidth]{polynomial_sphe.eps}
+
+
+\end{center}
+   \caption{The plot of the cost function: $J(\theta) = -cos(\theta)^8+2cos(\theta)^4-cos(\theta)^2$. }
+\label{fig:line_cost_sphe}
+\end{figure}
+
+
+
+
+
+
+
+\begin{figure}[H]
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1.0\linewidth]{polynomial_est.eps}
+
+
+\end{center}
+   \caption{The estimation process of the optimal $x$ when the penalty method is used.Here the initial value of $x$ is set to 4. The total iteration for $T_i$ is 500. The $\alpha_1 = 1$ and $\alpha _{n+1} = \alpha _n + \delta_n,$ where $\delta _ n=e^n$. }
+\label{fig:line_result}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1.0\linewidth]{polynomial_est_sphe.eps}
+
+
+\end{center}
+   \caption{The estimation process of the optimal $\theta$ when the spherical coordinated parameterization is used. In order to make sure the global optimal value is collected, 5 times experiments with random initialized value of $\theta$ is done and the global minimum value is collected from those 5 experiments.}
+\label{fig:polynomial_est_res_sphe}
+\end{figure}
+
+
+%owners-MacBook-Pro:project jimmy$ python polynomial.py 
+%res 0.269693554986 0.269700164958
+%--- 0.00234007835388 seconds ---
+%owners-MacBook-Pro:project jimmy$ python polynomial_sphe.py 
+%res 0.26962814355
+%--- 0.0121109485626 seconds ---
+
+\begin{table*}[!ht]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Optimal $x$& method & estimated $x$&execution time(ms)\\
+\hline
+0.2696& penalty method&0.2697&2.34\\
+\hline
+0.2696&  \makecell{ the spherical coordinates \\parameterization}&0.2696&12.11\\
+
+\hline
+\end{tabular}
+\end{center}
+\caption{The results of the penalty method and spherical coordinate parameterization.}
+\label{tab:line}
+\end{table*}
+
+
 \bibliography{jimmy_shen}
 \bibliographystyle{ieeetr}
   
