@@ -84,7 +84,7 @@ where \quad g(x)_{+} =(g_1(x)_{+},...g_j(x)_{+})^T, and \quad g_i(x)_{+} = max(1
 where \quad g(x)_{\_} =(g_1(x)_{\_},...g_j(x)_{\_})^T, and \quad g_i(x)_{\_} = min(0,g_i(\theta))\\
 \end{aligned}
 \end{equation}
-Then two-time scale algorithm is used to get the optimal value of $x$ by using the formulars shown in equation \ref{eq:pena_a}, equation \ref{eq:pena_b} and equation \ref{eq:pena_c}. \\
+Then two-time scale algorithm is used to get the optimal value of $x$ by using the formulas shown in equation \ref{eq:pena_a}, equation \ref{eq:pena_b} and equation \ref{eq:pena_c}. \\
 \begin{equation} \label{eq:pena_a}
 x_{n+1}=x_n-\epsilon _n \nabla J{\alpha_ n}(x_n)^T
 \end{equation}
@@ -112,8 +112,9 @@ where $\sum \delta_n = + \infty$, and\\
 %\end{table*}
 
 
-\section{Experiments}
-\subsection{Cost function is linear and without noise}
+\section{Deterministic Optimization}
+\subsection{Cost function is linear function}
+\subsubsection{Plots of the cost function }
 In this experiment, the cost function is a linear function. The optimization problem is described as below:\\
 
 
@@ -156,7 +157,7 @@ As $\sum_{i=1}^{2} x_i = 1$, we can change equation \ref{eq:1} to:\\
 \end{aligned}
 \end{equation}
 
-The plot of the equation \ref{eq:2} is shown in figure \ref{fig:line_cost}. By using the equation \ref{eq:sphe}, we can change the constrained optimization probblem to an unconstrained problem by using the spherical coordinates parameterization method. The unconstrained problem by using the spherical coordinates parameterization method is formally described in equation \ref{eq:line_theta}. The plot of the equation \ref{eq:line_theta} is shown in figure \ref{fig:line_cost_sphe}.\\  
+The plot of the equation \ref{eq:2} is shown in figure \ref{fig:line_cost}. By using the equation \ref{eq:sphe}, we can change the constrained optimization problem to an unconstrained problem by using the spherical coordinates parameterization method. The unconstrained problem by using the spherical coordinates parameterization method is formally described in equation \ref{eq:line_theta}. The plot of the equation \ref{eq:line_theta} is shown in figure \ref{fig:line_cost_sphe}.\\  
 
 
 %\begin{equation}
@@ -181,7 +182,24 @@ The plot of the equation \ref{eq:2} is shown in figure \ref{fig:line_cost}. By u
 \end{figure}
 
 
+\subsubsection{Penalty method }
+ By using the equation \ref{eq:pena_a}, equation \ref{eq:pena_b} and equation \ref{eq:pena_c}, for this specified question, we can get:\\
+\begin{equation} \label{eq:pena_line_a}
+x_{n+1}=x_n-\epsilon _n \nabla J{\alpha_ n}(x_n)^T
+\end{equation}
+\begin{equation}\label{eq:pena_line_b}
+\alpha_{n+1}=\alpha_n+\delta _n \mathbbm{1} _{\{n\in {T_i}\}}
+\end{equation}
 
+\begin{equation}\label{eq:pena_line_c}
+\nabla _x J(x_n) = -1
+\end{equation}
+
+\begin{equation}\label{eq:pena_line_d}
+\nabla J{\alpha_ n}(x_n) =\nabla _x J(x_n)+\alpha_n x_n( \mathbbm{1}_{\{x_n<0\}}+ x_n \mathbbm{1}_{\{x_n>1\}})
+\end{equation}
+
+By using the equation \ref{eq:pena_line_a} , equation \ref{eq:pena_line_b},  equation \ref{eq:pena_line_c}  and equation \ref{eq:pena_line_d}, we can estimate the optimal value of $x$ and the estimation process is shown in figure \ref{fig:line_result}\\
 
 \begin{figure}[H]
 \begin{center}
@@ -194,6 +212,17 @@ The plot of the equation \ref{eq:2} is shown in figure \ref{fig:line_cost}. By u
 \label{fig:line_result}
 \end{figure}
 
+
+\subsubsection{the spherical coordinated parameterization method }
+
+\begin{equation} \label{eq:sphe_line_a}
+\theta_{n+1}=\theta_n-\epsilon _n \nabla J{\theta_ n}
+\end{equation}
+\begin{equation}\label{eq:sphe_line_b}
+\nabla _{\theta} J(\theta_n) = 2*cos(\theta_n)*sin(\theta_n)
+\end{equation}
+
+When the spherical coordinated parameterization is used, the constrained optimization problem can be changed into a unconstrained problem. We can use the formula shown in equation \ref{eq:sphe_line_a} and equation \ref{eq:sphe_line_b} to estimate the optimal result. As we don't know whether the cost function is convex, we may get multiple local minimum. In order to get a global minimum, several experiments are done to get more than one estimation and the best one will be selected as the global optimization. In this experiment, 5 experiments are done. The estimation process is  shown in figure \ref{fig:line_result_sphe}.\\
 \begin{figure}[H]
 \begin{center}
 %\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
@@ -201,10 +230,11 @@ The plot of the equation \ref{eq:2} is shown in figure \ref{fig:line_cost}. By u
 
 
 \end{center}
-   \caption{The estimation process of the optimal $\theta$ when the spherical coordinated parameterization is used. In order to make sure the global optimal value is collected, 5 times experiments with random initialized value of $\theta$ is done and the global minimum vlaue is collected from those 5 experiments.}
+   \caption{The estimation process of the optimal $\theta$ when the spherical coordinated parameterization is used. In order to make sure the global optimal value is collected, 5 times experiments with random initialized value of $\theta$ is done and the global minimum value is collected from those 5 experiments.}
 \label{fig:line_result_sphe}
 \end{figure}
 
+\subsubsection{Optimization results comparison}
 
 
 
@@ -244,6 +274,7 @@ Optimal $x$& method & estimated $x$&execution time(ms)\\
 \label{tab:line}
 \end{table*}
 
+The comparison of the penalty and the spherical coordinates parameterization method is shown in table \ref{tab:line}. From the results, we can see that the  spherical coordinates parameterization method  can get a more accurate result. At the same time, the spherical coordinates parameterization method is slower as 5 repeated experiments are done to get the global minimum result. \\
 
 %\begin{table*}[!ht]
 %\begin{center}
@@ -264,7 +295,27 @@ Optimal $x$& method & estimated $x$&execution time(ms)\\
 %\label{tab:k}
 %\end{table*}
 
+\subsection{Cost function is polynomial }
+\subsubsection{Plots of the cost function }
+In this experiment, the cost function is a linear function. The optimization problem is described as below:\\
+\begin{equation}\label{eq:pol2}
+\begin{aligned}
+\min_{x\in \mathbb{R}} \quad &J(x) =-x^4+2x^2-x\\
+\textrm{s.t.} \quad & 0 \leq x \leq 1\\
+\end{aligned}
+\end{equation}
+By using this cost function, we can get a minimum value which is between 0 and 1. We can change the problem as below by using the spherical coordinates parameterization method.\\
 
+
+
+
+\begin{equation}\label{eq:poly_theta}
+\begin{aligned}
+\min_{\theta\in \mathbb{R}} \quad &J(\theta) = -cos(\theta)^8+2cos(\theta)^4-cos(\theta)^2\\
+\end{aligned}
+\end{equation}
+
+The plot of the equation \ref{eq:pol2} is shown in figure \ref{fig:poly_cost}.  The plot of the equation \ref{eq:line_theta} is shown in figure \ref{fig:poly_cost_sphe}.\\  
 
 
 \begin{figure}[H]
@@ -275,10 +326,8 @@ Optimal $x$& method & estimated $x$&execution time(ms)\\
 
 \end{center}
    \caption{The plot of the cost function: $J(x) =-x^4+2x^2-x$. }
-\label{fig:line_cost_sphe}
+\label{fig:poly_cost}
 \end{figure}
-
-
 
 
 
@@ -290,14 +339,30 @@ Optimal $x$& method & estimated $x$&execution time(ms)\\
 
 \end{center}
    \caption{The plot of the cost function: $J(\theta) = -cos(\theta)^8+2cos(\theta)^4-cos(\theta)^2$. }
-\label{fig:line_cost_sphe}
+\label{fig:poly_cost_sphe}
 \end{figure}
 
 
 
 
+\subsubsection{Penalty method }
+ By using the equation \ref{eq:pena_a}, equation \ref{eq:pena_b} and equation \ref{eq:pena_c}, for this specified question, we can get:\\
+\begin{equation} \label{eq:pena_poly_a}
+x_{n+1}=x_n-\epsilon _n \nabla J{\alpha_ n}(x_n)^T
+\end{equation}
+\begin{equation}\label{eq:pena_poly_b}
+\alpha_{n+1}=\alpha_n+\delta _n \mathbbm{1} _{\{n\in {T_i}\}}
+\end{equation}
 
+\begin{equation}\label{eq:pena_poly_c}
+\nabla _x J(x_n) = -4x^3+4x-1
+\end{equation}
 
+\begin{equation}\label{eq:pena_poly_d}
+\nabla J{\alpha_ n}(x_n) =\nabla _x J(x_n)+\alpha_n x_n( \mathbbm{1}_{\{x_n<0\}}+ x_n \mathbbm{1}_{\{x_n>1\}})
+\end{equation}
+
+By using the equation \ref{eq:pena_poly_a} , equation \ref{eq:pena_poly_b},  equation \ref{eq:pena_poly_c}  and equation \ref{eq:pena_poly_d}, we can estimate the optimal value of $x$ and the estimation process is shown in figure \ref{fig:poly_result}\\
 
 \begin{figure}[H]
 \begin{center}
@@ -306,9 +371,24 @@ Optimal $x$& method & estimated $x$&execution time(ms)\\
 
 
 \end{center}
-   \caption{The estimation process of the optimal $x$ when the penalty method is used.Here the initial value of $x$ is set to 4. The total iteration for $T_i$ is 500. The $\alpha_1 = 1$ and $\alpha _{n+1} = \alpha _n + \delta_n,$ where $\delta _ n=e^n$. }
-\label{fig:line_result}
+   \caption{The estimation process of the optimal $x$ when the penalty method is used.Here the initial value of $x$ is set to 4. The total iteration for $T_i$ is 500. The $\alpha_1 = 1$ and $\alpha _{n+1} = \alpha _n + \delta_n,$ where $\delta _ n=e^n$ The value of $x_n$ is upper bounded by the value of 50 as if it is not bounded, the value of $x_n$ will become too large to be handled by the computer. }
+\label{fig:poly_result}
 \end{figure}
+
+
+
+
+
+\subsubsection{the spherical coordinated parameterization method }
+
+\begin{equation} \label{eq:sphe_poly_a}
+\theta_{n+1}=\theta_n-\epsilon _n \nabla J{\theta_ n}
+\end{equation}
+\begin{equation}\label{eq:sphe_poly_b}
+\nabla _{\theta} J(\theta_n) = 8*cos(\theta_n)^7*sin(\theta_n)-8*cos(\theta_n)^3*sin(\theta_n)+2*cos(\theta_n)*sin(\theta_n)
+\end{equation}
+
+When the spherical coordinated parameterization is used, the constrained optimization problem can be changed into a unconstrained problem. We can use the formula shown in equation \ref{eq:sphe_poly_a} and equation \ref{eq:sphe_poly_b} to estimate the optimal result. As we don't know whether the cost function is convex, we may get multiple local minimum. In order to get a global minimum, several experiments are done to get more than one estimation and the best one will be selected as the global optimization. In this experiment, 5 experiments are done. The estimation process is  shown in figure \ref{fig:polynomial_est_res_sphe}.\\
 
 
 
@@ -322,7 +402,7 @@ Optimal $x$& method & estimated $x$&execution time(ms)\\
    \caption{The estimation process of the optimal $\theta$ when the spherical coordinated parameterization is used. In order to make sure the global optimal value is collected, 5 times experiments with random initialized value of $\theta$ is done and the global minimum value is collected from those 5 experiments.}
 \label{fig:polynomial_est_res_sphe}
 \end{figure}
-
+\subsubsection{Optimization results comparison}
 
 %owners-MacBook-Pro:project jimmy$ python polynomial.py 
 %res 0.269693554986 0.269700164958
@@ -345,9 +425,13 @@ Optimal $x$& method & estimated $x$&execution time(ms)\\
 \end{tabular}
 \end{center}
 \caption{The results of the penalty method and spherical coordinate parameterization.}
-\label{tab:line}
+\label{tab:poly}
 \end{table*}
 
+
+The comparison of the penalty and the spherical coordinates parameterization method is shown in table \ref{tab:poly}. We can get the similar conclusion as the cost function is linear. \\
+
+\subsection{Cost function is the combination of the log normal pdf function and the exponential function }
 
 \bibliography{jimmy_shen}
 \bibliographystyle{ieeetr}
