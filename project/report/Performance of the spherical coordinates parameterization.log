@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 DEC 2017 01:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 DEC 2017 02:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -275,7 +275,26 @@ Package: authblk 2001/02/27 1.3 (PWD)
 \c@authors=\count113
 \c@affil=\count114
 )
-(./Performance of the spherical coordinates parameterization.aux)
+(./Performance of the spherical coordinates parameterization.aux
+
+LaTeX Warning: Label `fig:exp_cost_sphe' multiply defined.
+
+
+LaTeX Warning: Label `fig:poly_result' multiply defined.
+
+
+LaTeX Warning: Label `eq:sphe_poly_a' multiply defined.
+
+
+LaTeX Warning: Label `eq:sphe_poly_b' multiply defined.
+
+
+LaTeX Warning: Label `fig:polynomial_est_res_sphe' multiply defined.
+
+
+LaTeX Warning: Label `tab:poly' multiply defined.
+
+)
 \openout1 = `"Performance of the spherical coordinates parameterization.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -290,8 +309,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
-
-(/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
 \scratchdimen=\dimen133
@@ -624,37 +642,154 @@ Underfull \hbox (badness 10000) in paragraph at lines 432--433
  []
 
 [11 <./polynomial_est_sphe-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--444
+
+ []
+
+
+LaTeX Warning: Reference `fig:exp_cost' on page 12 undefined on input line 454.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+
+ []
+
+Package epstopdf Info: Source file: <exponential.eps>
+(epstopdf)                    date: 2017-12-26 02:00:56
+(epstopdf)                    size: 34769 bytes
+(epstopdf)             Output file: <exponential-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-12-26 02:05:44
+(epstopdf)                    size: 16973 bytes
+(epstopdf)             Command: <repstopdf --outfile=exponential-eps-converted-
+to.pdf exponential.eps>
+(epstopdf)             \includegraphics on input line 460.
+Package epstopdf Info: Output file is already uptodate.
+<exponential-eps-converted-to.pdf, id=318, 578.16pt x 433.62pt>
+File: exponential-eps-converted-to.pdf Graphic file (type pdf)
+
+<use exponential-eps-converted-to.pdf>
+Package pdftex.def Info: exponential-eps-converted-to.pdf used on input line 46
+0.
+(pdftex.def)             Requested size: 390.0pt x 292.4956pt.
+ [12]
+Package epstopdf Info: Source file: <exponential_sphe.eps>
+(epstopdf)                    date: 2017-12-26 02:01:15
+(epstopdf)                    size: 39252 bytes
+(epstopdf)             Output file: <exponential_sphe-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-12-26 02:05:45
+(epstopdf)                    size: 19688 bytes
+(epstopdf)             Command: <repstopdf --outfile=exponential_sphe-eps-conve
+rted-to.pdf exponential_sphe.eps>
+(epstopdf)             \includegraphics on input line 475.
+Package epstopdf Info: Output file is already uptodate.
+
+<exponential_sphe-eps-converted-to.pdf, id=322, 578.16pt x 433.62pt>
+File: exponential_sphe-eps-converted-to.pdf Graphic file (type pdf)
+
+<use exponential_sphe-eps-converted-to.pdf>
+Package pdftex.def Info: exponential_sphe-eps-converted-to.pdf used on input li
+ne 475.
+(pdftex.def)             Requested size: 390.0pt x 292.4956pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--479
+[]\OT1/cmr/m/n/12 Figure 10: The plot of the cost func-tion: $\OML/cmm/m/it/12 
+J\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^R\OT1/cmr/m/n/12 ) =
+ []
+
+[13 <./exponential-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 488--489
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 504--505
+
+ []
+
+Package epstopdf Info: Source file: <polynomial_est.eps>
+(epstopdf)                    date: 2017-12-25 23:54:34
+(epstopdf)                    size: 25103 bytes
+(epstopdf)             Output file: <polynomial_est-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-12-26 00:00:51
+(epstopdf)                    size: 13156 bytes
+(epstopdf)             Command: <repstopdf --outfile=polynomial_est-eps-convert
+ed-to.pdf polynomial_est.eps>
+(epstopdf)             \includegraphics on input line 509.
+Package epstopdf Info: Output file is already uptodate.
+File: polynomial_est-eps-converted-to.pdf Graphic file (type pdf)
+<use polynomial_est-eps-converted-to.pdf>
+Package pdftex.def Info: polynomial_est-eps-converted-to.pdf used on input line
+ 509.
+(pdftex.def)             Requested size: 390.0pt x 292.4956pt.
+ [14 <./exponential_sphe-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
+
+ []
+
+[15]
+Package epstopdf Info: Source file: <polynomial_est_sphe.eps>
+(epstopdf)                    date: 2017-12-25 23:54:46
+(epstopdf)                    size: 41431 bytes
+(epstopdf)             Output file: <polynomial_est_sphe-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-12-26 00:00:51
+(epstopdf)                    size: 20182 bytes
+(epstopdf)             Command: <repstopdf --outfile=polynomial_est_sphe-eps-co
+nverted-to.pdf polynomial_est_sphe.eps>
+(epstopdf)             \includegraphics on input line 534.
+Package epstopdf Info: Output file is already uptodate.
+File: polynomial_est_sphe-eps-converted-to.pdf Graphic file (type pdf)
+ <use polynomial_est_sphe-eps-converted-to.pdf>
+Package pdftex.def Info: polynomial_est_sphe-eps-converted-to.pdf used on input
+ line 534.
+(pdftex.def)             Requested size: 390.0pt x 292.4956pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 568--569
+
+ []
+
 No file "Performance of the spherical coordinates parameterization".bbl.
-[12] (./Performance of the spherical coordinates parameterization.aux) ) 
+[16] [17] (./Performance of the spherical coordinates parameterization.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4584 strings out of 492995
- 65393 string characters out of 6132704
- 134842 words of memory out of 5000000
- 8022 multiletter control sequences out of 15000+600000
+ 4602 strings out of 492995
+ 65858 string characters out of 6132704
+ 134953 words of memory out of 5000000
+ 8038 multiletter control sequences out of 15000+600000
  11599 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,14n,28p,732b,301s stack positions out of 5000i,500n,10000p,200000b,80000s
- </User
-s/jimmy/Library/texlive/2017/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/tex
-live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+ </Users/jimmy/Library/texlive/2017/texmf-var/fonts/pk/ljfour/public/bbm/bbm1
+2.600pk></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pf
+b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
+live/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "Performance of the spherical coordinates parameterization.pd
-f" (12 pages, 261873 bytes).
+f" (17 pages, 301131 bytes).
 PDF statistics:
- 371 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
+ 474 PDF objects out of 1000 (max. 8388607)
+ 173 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -431,7 +431,142 @@ Optimal $x$& method & estimated $x$&execution time(ms)\\
 
 The comparison of the penalty and the spherical coordinates parameterization method is shown in table \ref{tab:poly}. We can get the similar conclusion as the cost function is linear. \\
 
-\subsection{Cost function is the combination of the log normal pdf function and the exponential function }
+\subsection{Cost function is a combination of the log normal pdf function and the exponential function }
+\subsubsection{Plots of the cost function }
+In this experiment, the cost function is  a combination of the log normal pdf function and the exponential function. The optimization problem is described as below:\\
+\begin{equation}\label{eq:exp2}
+\begin{aligned}
+\min_{x\in \mathbb{R}} \quad &J(x) =-\frac{1}{(x+0.001) \sqrt{2 \pi}}e^{-\frac{\ln(x+0.001)^2}{2} }-0.01 e^x \\
+\textrm{s.t.} \quad & 0 \leq x \leq 1\\
+\end{aligned}
+\end{equation}
+By using this cost function, we can get a minimum value which is between 0 and 1. We can change the problem as below by using the spherical coordinates parameterization method.\\
+
+
+
+
+\begin{equation}\label{eq:exp_theta}
+\begin{aligned}
+\min_{\theta\in \mathbb{R}} \quad &J(\theta)=-\frac{1}{(\cos \theta ^2+0.001) \sqrt{2 \pi}}e^{-\frac{\ln(\cos \theta ^2+0.001)^2}{2} }-0.01 e^{\cos \theta ^2}\\
+\end{aligned}
+\end{equation}
+
+The plot of the equation \ref{eq:exp2} is shown in figure \ref{fig:exp_cost}.  The plot of the equation \ref{eq:exp_theta} is shown in figure \ref{fig:poly_cost_sphe}.\\  
+
+
+\begin{figure}[H]
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1.0\linewidth]{exponential.eps}
+
+
+\end{center}
+   \caption{The plot of the cost function: $J(x) =-\frac{1}{(x+0.001) \sqrt{2 \pi}}e^{-\frac{\ln(x+0.001)^2}{2} }-0.01 e^x$. }
+\label{fig:exp_cost_sphe}
+\end{figure}
+
+
+
+
+
+\begin{figure}[H]
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1.0\linewidth]{exponential_sphe.eps}
+
+
+\end{center}
+   \caption{The plot of the cost function: $J(\theta)=-\frac{1}{(\cos \theta ^2+0.001) \sqrt{2 \pi}}e^{-\frac{\ln(\cos \theta ^2+0.001)^2}{2} }-0.01 e^{\cos \theta ^2}$. }
+\label{fig:exp_cost_sphe}
+\end{figure}
+
+
+
+
+
+\subsubsection{Penalty method }
+ By using the equation \ref{eq:pena_a}, equation \ref{eq:pena_b} and equation \ref{eq:pena_c}, for this specified question, we can get:\\
+\begin{equation} \label{eq:pena_exp_a}
+x_{n+1}=x_n-\epsilon _n \nabla J{\alpha_ n}(x_n)^T
+\end{equation}
+\begin{equation}\label{eq:pena_exp_b}
+\alpha_{n+1}=\alpha_n+\delta _n \mathbbm{1} _{\{n\in {T_i}\}}
+\end{equation}
+
+\begin{equation}\label{eq:pena_exp_c}
+\nabla _x J(x) =  -\frac{1+\ln(x+0.001)}{(x+0.001)^2 \sqrt{2 \pi}}e^{-\frac{\ln(x+0.001)^2}{2} }  -0.01 e^x
+\end{equation}
+
+\begin{equation}\label{eq:pena_exp_d}
+\nabla J{\alpha_ n}(x_n) =\nabla _x J(x_n)+\alpha_n x_n( \mathbbm{1}_{\{x_n<0\}}+ x_n \mathbbm{1}_{\{x_n>1\}})
+\end{equation}
+
+By using the equation \ref{eq:pena_exp_a} , equation \ref{eq:pena_exp_b},  equation \ref{eq:pena_exp_c}  and equation \ref{eq:pena_exp_d}, we can estimate the optimal value of $x$ and the estimation process is shown in figure \ref{fig:poly_result}\\
+
+\begin{figure}[H]
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1.0\linewidth]{polynomial_est.eps}
+
+
+\end{center}
+   \caption{The estimation process of the optimal $x$ when the penalty method is used.Here the initial value of $x$ is set to 4. The total iteration for $T_i$ is 500. The $\alpha_1 = 1$ and $\alpha _{n+1} = \alpha _n + \delta_n,$ where $\delta _ n=e^n$ The value of $x_n$ is upper bounded by the value of 50 as if it is not bounded, the value of $x_n$ will become too large to be handled by the computer. }
+\label{fig:poly_result}
+\end{figure}
+
+
+\subsubsection{the spherical coordinated parameterization method }
+
+\begin{equation} \label{eq:sphe_poly_a}
+\theta_{n+1}=\theta_n-\epsilon _n \nabla J{\theta_ n}
+\end{equation}
+\begin{equation}\label{eq:sphe_poly_b}
+\nabla _{\theta} J(\theta_n) = (\frac{1+\ln( \cos \theta ^2+0.001)}{( \cos \theta ^2+0.001)^2 \sqrt{2 \pi}}e^{-\frac{\ln( \cos \theta ^2+0.001)^2}{2} }  +0.01 e^ {\cos \theta ^2})(2 \cos \theta \sin \theta)
+\end{equation}
+
+When the spherical coordinated parameterization is used, the constrained optimization problem can be changed into a unconstrained problem. We can use the formula shown in equation \ref{eq:sphe_poly_a} and equation \ref{eq:sphe_poly_b} to estimate the optimal result. As we don't know whether the cost function is convex, we may get multiple local minimum. In order to get a global minimum, several experiments are done to get more than one estimation and the best one will be selected as the global optimization. In this experiment, 5 experiments are done. The estimation process is  shown in figure \ref{fig:polynomial_est_res_sphe}.\\
+
+
+
+\begin{figure}[H]
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1.0\linewidth]{polynomial_est_sphe.eps}
+
+
+\end{center}
+   \caption{The estimation process of the optimal $\theta$ when the spherical coordinated parameterization is used. In order to make sure the global optimal value is collected, 5 times experiments with random initialized value of $\theta$ is done and the global minimum value is collected from those 5 experiments.}
+\label{fig:polynomial_est_res_sphe}
+\end{figure}
+\subsubsection{Optimization results comparison}
+
+%owners-MacBook-Pro:project jimmy$ python polynomial.py 
+%res 0.269693554986 0.269700164958
+%--- 0.00234007835388 seconds ---
+%owners-MacBook-Pro:project jimmy$ python polynomial_sphe.py 
+%res 0.26962814355
+%--- 0.0121109485626 seconds ---
+
+\begin{table*}[!ht]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Optimal $x$& method & estimated $x$&execution time(ms)\\
+\hline
+0.2696& penalty method&0.2697&2.34\\
+\hline
+0.2696&  \makecell{ the spherical coordinates \\parameterization}&0.2696&12.11\\
+
+\hline
+\end{tabular}
+\end{center}
+\caption{The results of the penalty method and spherical coordinate parameterization.}
+\label{tab:poly}
+\end{table*}
+
+
+The comparison of the penalty and the spherical coordinates parameterization method is shown in table \ref{tab:poly}. We can get the similar conclusion as the cost function is linear. \\
+
 
 \bibliography{jimmy_shen}
 \bibliographystyle{ieeetr}
