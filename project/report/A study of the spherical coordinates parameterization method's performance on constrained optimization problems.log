@@ -1,10 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 DEC 2017 05:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 DEC 2017 05:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"Performance of the spherical coordinates parameterization.tex"
-(./Performance of the spherical coordinates parameterization.tex
+**"A study of the spherical coordinates parameterization method's performance o
+n constrained optimization problems.tex"
+
+(./A study of the spherical coordinates parameterization method's performance o
+n constrained optimization problems.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -275,7 +278,8 @@ Package: authblk 2001/02/27 1.3 (PWD)
 \c@authors=\count113
 \c@affil=\count114
 )
-(./Performance of the spherical coordinates parameterization.aux
+(./A study of the spherical coordinates parameterization method's performance o
+n constrained optimization problems.aux
 
 LaTeX Warning: Label `fig:exp_cost_sphe' multiply defined.
 
@@ -292,7 +296,8 @@ LaTeX Warning: Label `eq:sphe_poly_b' multiply defined.
 LaTeX Warning: Label `fig:polynomial_est_res_sphe' multiply defined.
 
 )
-\openout1 = `"Performance of the spherical coordinates parameterization.aux"'.
+\openout1 = `"A study of the spherical coordinates parameterization method's pe
+rformance on constrained optimization problems.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
@@ -832,8 +837,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 647--648
  []
 
 [20 <./polynomial_est_sphe_noise-eps-converted-to.pdf>]
-No file "Performance of the spherical coordinates parameterization".bbl.
-[21] (./Performance of the spherical coordinates parameterization.aux)
+No file "A study of the spherical coordinates parameterization method's perform
+ance on constrained optimization problems".bbl.
+[21]
+(./A study of the spherical coordinates parameterization method's performance o
+n constrained optimization problems.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -843,12 +851,12 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  4628 strings out of 492995
- 66722 string characters out of 6132704
+ 67208 string characters out of 6132704
  134074 words of memory out of 5000000
  8060 multiletter control sequences out of 15000+600000
  11599 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,14n,28p,732b,301s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,14n,28p,786b,301s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/jimmy/Library/texlive/2017/texmf-var/fonts/pk/ljfour/public/bbm/bbm1
 2.600pk></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
 10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
@@ -864,8 +872,9 @@ al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
 live/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Performance of the spherical coordinates parameterization.pd
-f" (21 pages, 379455 bytes).
+Output written on "A study of the spherical coordinates parameterization method
+'s performance on constrained optimization problems.pdf" (21 pages, 379457 byte
+s).
 PDF statistics:
  628 PDF objects out of 1000 (max. 8388607)
  206 compressed objects within 3 object streams

@@ -29,7 +29,7 @@
 \renewcommand\labelenumi{(\theenumi)}
 %vector
 \renewcommand{\vec}[1]{\mathbf{#1}}
-\title {A study of the spherical coordinates parameterization}
+\title {A study of the spherical coordinates parameterization method's performance on constrained optimization problems}
 %\author{jim.morris.shen@gmail.com}
 %\author{The Graduate Center, City University of New York}
 \author{Xiaoke Shen}
@@ -39,7 +39,7 @@
 \maketitle
 
 \begin{abstract}
-This report provides the results of using the spherical coordinates to resolve the constrained problems.
+In this report the resource allocation problem is discussed and it can be treated as a constrained optimization problem as we should guarantee the ratio of the allocation resource for one individual will be within the close interval of 0 and 1. Meanwhile, by introducing the spherical coordinates parameterization method, we can change the constrained optimization problem  to an unconstrained optimization problem. In this report, several experiments are designed and the performance of the constrained optimization method which is the penalty method and the spherical coordinates parameterization method are compared based on those experiments.
 \end{abstract}
 %\textbf{Due Mar 1st 11:59 pm. 10 points for each exercise and 20 points for the extra credit exercise }\\
 \section{Introduction}
@@ -48,26 +48,11 @@ For the resource allocation problem, suppose resource $p_i$ is allocated to $i$ 
 \sum_{i=1}^{n} p_i = 1
 \end{equation}
 
-We can rewrite the equation \ref{eq:sum_res_alo} as bellow:\\
-\begin{equation} \label{eq:sum_res_alo_r_2}
-\sum_{i=1}^{n} (r_i)^2 = 1
-\end{equation}
-Any feasible allocation vector $r = (r_1,...,r_n)$ on the unit ball can be described through $n-1$ angels denoted by $\theta_i, 1\leq i \leq n-1$, in the following way. Indeed, the spherical coordinated parameterization of $r$ via $\theta^T = (\theta_1,...,\theta_{n-1}) $ is given by:\\
+In order to get the optimal result based on a specified cost function, it will be very natural to build a constrained optimization problem with the constrains shown in equation \ref{eq:sum_res_alo} and also the constrains $0 \leq p_i \leq 1$.\\
 
-
-
-\begin{equation}\label{eq:sphe}
-    r_i(\theta)=\left\{
-                \begin{array}{ll}
-                  cos(\theta_1), \quad \quad \quad \quad \quad \quad \quad \quad i=1;\\
-                  cos(\theta_i)\prod_{k=1}^{i-1} sin(\theta_k),\quad  \quad  2\leq i \leq n-1;\\
-                  sin(\theta_{n-1})\prod_{k=1}^{n-2} sin(\theta_k),\quad  i=n.
-                \end{array}
-              \right.
-\end{equation}
 
 \subsection{Penalty Methods}
-In order to adress the constrained optimization problem, several methods are provided. In this work, the penalty method is studied to compare the performance of the spherical coordinated parameterization method.\\
+In order to address the constrained optimization problem, several methods are provided. In this work, the penalty method is studied to compare the performance of the spherical coordinated parameterization method.\\
 Given the constrained problem as described in equation \ref{eq:pena_1}
 \begin{equation}\label{eq:pena_1}
 \begin{aligned}
@@ -95,6 +80,23 @@ where $\sum \delta_n = + \infty$, and\\
 \begin{equation}\label{eq:pena_c}
 \nabla J{\alpha_ n}(x_n) =\nabla _x J(x_n)+\alpha_n(g(x_n)^T \nabla g(x_n) \mathbbm{1}_{\{|g(x_n)|<0\}}+g(x_n)^T \nabla g(x_n) \mathbbm{1}_{\{|g(x_n)|>1\}})
 \end{equation}
+\subsection{The spherical coordinated parameterization  Methods}
+At the same time, we can rewrite the equation \ref{eq:sum_res_alo} as bellow:\\
+\begin{equation} \label{eq:sum_res_alo_r_2}
+\sum_{i=1}^{n} (r_i)^2 = 1
+\end{equation}
+Any feasible allocation vector $r = (r_1,...,r_n)$ on the unit ball can be described through $n-1$ angels denoted by $\theta_i, 1\leq i \leq n-1$, in the following way. Indeed, the spherical coordinated parameterization of $r$ via $\theta^T = (\theta_1,...,\theta_{n-1}) $ is given by:\\
+\begin{equation}\label{eq:sphe}
+    r_i(\theta)=\left\{
+                \begin{array}{ll}
+                  cos(\theta_1), \quad \quad \quad \quad \quad \quad \quad \quad i=1;\\
+                  cos(\theta_i)\prod_{k=1}^{i-1} sin(\theta_k),\quad  \quad  2\leq i \leq n-1;\\
+                  sin(\theta_{n-1})\prod_{k=1}^{n-2} sin(\theta_k),\quad  i=n.
+                \end{array}
+              \right.
+\end{equation}
+
+By using the spherical coordinated parameterization method, we can change a constrained optimization problem into a unconstrained optimization problem.\\
 %\begin{table*}[!ht]
 %\begin{center}
 %\begin{tabular}{|c|c|c|}
@@ -567,7 +569,7 @@ Optimal $x$& method & estimated $x$&execution time(ms)\\
 
 
 The comparison of the penalty and the spherical coordinates parameterization method is shown in table \ref{tab:exp}. \\
-\section{Undeterministic Optimization by adding the gaussian noise to the gradient}
+\section{Nondeterministic Optimization by adding the gaussian noise to the gradient}
 \subsection{Cost function is polynomial }
 The cost function is the same as equation \ref{eq:pol2}. The noise is added to the gradient of the cost function as below:\\
 \begin{equation}\label{eq:pena_poly_noise}
@@ -576,6 +578,74 @@ The cost function is the same as equation \ref{eq:pol2}. The noise is added to t
 where \quad \xi \sim \mathcal{N}(0,\,1)\,.\\
 \end{aligned}
 \end{equation}
+
+For the spherical coordinates parameterization, we have :\\
+
+\begin{equation}\label{eq:sphe_poly_noise}
+\begin{aligned}
+\nabla _{\theta} J(\theta_n) = 8*cos(\theta_n)^7*sin(\theta_n)-8*cos(\theta_n)^3*sin(\theta_n)+2*cos(\theta_n)*sin(\theta_n)+\xi\\
+where \quad \xi \sim \mathcal{N}(0,\,1)\,.\\
+\end{aligned}
+\end{equation}
+\begin{figure}[H]
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1.0\linewidth]{polynomial_est_noise.eps}
+
+
+\end{center}
+   \caption{The estimation process of the optimal $x$ when the penalty method is used.Here the initial value of $x$ is set to 10. The total iteration for $T_i$ is 500. The $\alpha_1 = 1$ and $\alpha _{n+1} = \alpha _n + \delta_n,$ where $\delta _ n=e^n$ The value of $x_n$ is upper bounded by the value of 50 as if it is not bounded, the value of $x_n$ will become too large to be handled by the computer. The noise is added to the gradient of the $J_{x}$  }
+\label{fig:poly_result_noise}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1.0\linewidth]{polynomial_est_sphe_noise.eps}
+
+
+\end{center}
+   \caption{The estimation process of the  optimal $\theta$ when the spherical coordinated parameterization is used. In order to make sure the global optimal value is collected, 5 times experiments with random initialized value of $\theta$ is done and the global minimum value is collected from those 5 experiments. In this case the noise is added to the gradient of the $J_{\theta}$}
+\label{fig:poly_result_sphe_noise}
+\end{figure}
+The estimation process when using the penalty method  is shown in figure \ref{fig:poly_result_noise}, and the estimation process of the  optimal $\theta$ when using the spherical coordinated parameterization is shown in figure \ref{fig:poly_result_sphe_noise}. The results for both the without noise and with noise are shown in table \ref{tab:poly_noise}. From the result, we can see when the noise is added, the accuracy of the estimated optimal value is reduced, however, the estimation process is convergent.\\
+
+
+%owners-MacBook-Pro:project jimmy$ python polynomial_noise.py 
+%res 0.294481510425 0.268739965181
+%--- 0.00351619720459 seconds ---
+%owners-MacBook-Pro:project jimmy$ python polynomial_sphe_noise.py 
+%res 0.294355386628
+%--- 0.0230438709259 seconds ---
+
+\begin{table*}[!ht]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Optimal $x$&with noise?& method & estimated $x$&execution time(ms)\\
+\hline
+0.2696& no&penalty method&0.2697&2.34\\
+\hline
+0.2696& no& \makecell{ the spherical coordinates \\parameterization}&0.2696&12.11\\
+
+\hline
+\hline
+0.2696& yes&penalty method&0.2687&3.52\\
+\hline
+0.2696& yes& \makecell{ the spherical coordinates \\parameterization}&0.2626&23.04\\
+
+\hline
+
+\end{tabular}
+\end{center}
+\caption{The results of the penalty method and spherical coordinate parameterization.}
+\label{tab:poly_noise}
+\end{table*}
+\section{Future plan}
+In this report, the two dimensional data are explored, in the future, more dimension should take into consideration to have a more general result. From the current result, we can not see the big difference of the convergence between the spherical coordinate method and the penalty method. We are supposed to observe more difference when more dimensional data is used.\\
+
 
 \bibliography{jimmy_shen}
 \bibliographystyle{ieeetr}
