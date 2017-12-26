@@ -86,7 +86,7 @@ c.plot_poly_order_4()
 
 
 #d = Simple(0.01, -0.1, 1.3)
-d = Simple(0.01, 0,6)
+d = Simple(0.01, 0,0.5)
 d.log_norm_and_exponential()
 d.log_norm_and_exponential_sphe()
 #d.exponential()

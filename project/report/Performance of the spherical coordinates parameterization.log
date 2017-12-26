@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 DEC 2017 02:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 DEC 2017 04:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -275,26 +275,16 @@ Package: authblk 2001/02/27 1.3 (PWD)
 \c@authors=\count113
 \c@affil=\count114
 )
-(./Performance of the spherical coordinates parameterization.aux
-
-LaTeX Warning: Label `fig:exp_cost_sphe' multiply defined.
-
-
-LaTeX Warning: Label `fig:poly_result' multiply defined.
-
-
-LaTeX Warning: Label `eq:sphe_poly_a' multiply defined.
-
-
-LaTeX Warning: Label `eq:sphe_poly_b' multiply defined.
-
-
-LaTeX Warning: Label `fig:polynomial_est_res_sphe' multiply defined.
-
-
-LaTeX Warning: Label `tab:poly' multiply defined.
-
-)
+(./Performance of the spherical coordinates parameterization.aux)
+Runaway argument?
+{eq:sphe 
+./Performance of the spherical coordinates parameterization.tex:38: File ended 
+while scanning use of \@newl@bel.
+<inserted text> 
+                \par 
+l.38 \begin{document}
+                     
+? 
 \openout1 = `"Performance of the spherical coordinates parameterization.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -309,7 +299,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
- (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
 \scratchdimen=\dimen133
@@ -615,6 +605,19 @@ Package pdftex.def Info: polynomial_est-eps-converted-to.pdf used on input line
  370.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
  [9 <./polynomial_sphe-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `eq:sphe_poly_a' on page 10 undefined on input line 39
+1.
+
+
+LaTeX Warning: Reference `eq:sphe_poly_b' on page 10 undefined on input line 39
+1.
+
+
+LaTeX Warning: Reference `fig:polynomial_est_res_sphe' on page 10 undefined on 
+input line 391.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 391--392
 
  []
@@ -637,6 +640,10 @@ Package pdftex.def Info: polynomial_est_sphe-eps-converted-to.pdf used on input
  line 398.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
  [10 <./polynomial_est-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `tab:poly' on page 11 undefined on input line 432.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 432--433
 
  []
@@ -652,7 +659,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 442--444
  []
 
 
+LaTeX Warning: Reference `eq:exp2' on page 12 undefined on input line 454.
+
+
 LaTeX Warning: Reference `fig:exp_cost' on page 12 undefined on input line 454.
+
+
+
+LaTeX Warning: Reference `eq:exp_theta' on page 12 undefined on input line 454.
 
 
 
@@ -708,65 +722,113 @@ Underfull \hbox (badness 10000) in paragraph at lines 488--489
  []
 
 
+LaTeX Warning: Reference `eq:pena_exp_a' on page 14 undefined on input line 504
+.
+
+
+LaTeX Warning: Reference `eq:pena_exp_b' on page 14 undefined on input line 504
+.
+
+
+LaTeX Warning: Reference `eq:pena_exp_c' on page 14 undefined on input line 504
+.
+
+
+LaTeX Warning: Reference `eq:pena_exp_d' on page 14 undefined on input line 504
+.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 504--505
 
  []
 
-Package epstopdf Info: Source file: <polynomial_est.eps>
-(epstopdf)                    date: 2017-12-25 23:54:34
-(epstopdf)                    size: 25103 bytes
-(epstopdf)             Output file: <polynomial_est-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-12-26 00:00:51
-(epstopdf)                    size: 13156 bytes
-(epstopdf)             Command: <repstopdf --outfile=polynomial_est-eps-convert
-ed-to.pdf polynomial_est.eps>
+Package epstopdf Info: Source file: <exp_est.eps>
+(epstopdf)                    date: 2017-12-26 04:04:42
+(epstopdf)                    size: 24515 bytes
+(epstopdf)             Output file: <exp_est-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-12-26 04:08:06
+(epstopdf)                    size: 13093 bytes
+(epstopdf)             Command: <repstopdf --outfile=exp_est-eps-converted-to.p
+df exp_est.eps>
 (epstopdf)             \includegraphics on input line 509.
 Package epstopdf Info: Output file is already uptodate.
-File: polynomial_est-eps-converted-to.pdf Graphic file (type pdf)
-<use polynomial_est-eps-converted-to.pdf>
-Package pdftex.def Info: polynomial_est-eps-converted-to.pdf used on input line
- 509.
+<exp_est-eps-converted-to.pdf, id=369, 578.16pt x 433.62pt>
+File: exp_est-eps-converted-to.pdf Graphic file (type pdf)
+
+<use exp_est-eps-converted-to.pdf>
+Package pdftex.def Info: exp_est-eps-converted-to.pdf used on input line 509.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
  [14 <./exponential_sphe-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `eq:sphe_poly_a' on page 15 undefined on input line 52
+7.
+
+
+LaTeX Warning: Reference `eq:sphe_poly_b' on page 15 undefined on input line 52
+7.
+
+
+LaTeX Warning: Reference `fig:polynomial_est_res_sphe' on page 15 undefined on 
+input line 527.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 527--528
 
  []
 
-[15]
-Package epstopdf Info: Source file: <polynomial_est_sphe.eps>
-(epstopdf)                    date: 2017-12-25 23:54:46
-(epstopdf)                    size: 41431 bytes
-(epstopdf)             Output file: <polynomial_est_sphe-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-12-26 00:00:51
-(epstopdf)                    size: 20182 bytes
-(epstopdf)             Command: <repstopdf --outfile=polynomial_est_sphe-eps-co
-nverted-to.pdf polynomial_est_sphe.eps>
+[15 <./exp_est-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <exp_est_sphe.eps>
+(epstopdf)                    date: 2017-12-26 04:05:00
+(epstopdf)                    size: 42092 bytes
+(epstopdf)             Output file: <exp_est_sphe-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-12-26 04:08:07
+(epstopdf)                    size: 20465 bytes
+(epstopdf)             Command: <repstopdf --outfile=exp_est_sphe-eps-converted
+-to.pdf exp_est_sphe.eps>
 (epstopdf)             \includegraphics on input line 534.
 Package epstopdf Info: Output file is already uptodate.
-File: polynomial_est_sphe-eps-converted-to.pdf Graphic file (type pdf)
- <use polynomial_est_sphe-eps-converted-to.pdf>
-Package pdftex.def Info: polynomial_est_sphe-eps-converted-to.pdf used on input
- line 534.
+
+<exp_est_sphe-eps-converted-to.pdf, id=450, 578.16pt x 433.62pt>
+File: exp_est_sphe-eps-converted-to.pdf Graphic file (type pdf)
+
+<use exp_est_sphe-eps-converted-to.pdf>
+Package pdftex.def Info: exp_est_sphe-eps-converted-to.pdf used on input line 5
+34.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 568--569
+
+LaTeX Warning: Reference `tab:exp' on page 16 undefined on input line 569.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 569--570
 
  []
 
+
+Overfull \hbox (9.53777pt too wide) in paragraph at lines 570--570
+|[]\OT1/cmr/bx/n/17.28 Undeterministic Op-ti-miza-tion by adding the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 572--573
+
+ []
+
+[16 <./exp_est_sphe-eps-converted-to.pdf>]
 No file "Performance of the spherical coordinates parameterization".bbl.
-[16] [17] (./Performance of the spherical coordinates parameterization.aux)
+[17] (./Performance of the spherical coordinates parameterization.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 4602 strings out of 492995
- 65858 string characters out of 6132704
- 134953 words of memory out of 5000000
- 8038 multiletter control sequences out of 15000+600000
+ 4614 strings out of 492995
+ 66196 string characters out of 6132704
+ 134804 words of memory out of 5000000
+ 8048 multiletter control sequences out of 15000+600000
  11599 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,14n,28p,732b,301s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -786,10 +848,10 @@ texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
 live/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "Performance of the spherical coordinates parameterization.pd
-f" (17 pages, 301131 bytes).
+f" (17 pages, 329691 bytes).
 PDF statistics:
- 474 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
+ 543 PDF objects out of 1000 (max. 8388607)
+ 185 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
